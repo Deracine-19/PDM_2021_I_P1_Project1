@@ -4,6 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".VictoryActivity">
+
+    <Button
+        android:id="@+id/btnBackToMenuFromVictory"
+        android:layout_width="218dp"
+        android:layout_height="57dp"
+        android:text="@string/back_to_menu"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="399dp" />
+
+    <Button
+        android:id="@+id/btnPlayAgain"
+        android:layout_width="218dp"
+        android:layout_height="57dp"
+        android:text="@string/play_again"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="323dp" />
+
+    <TextView
+        android:id="@+id/txvYouveWon"
+        android:layout_width="399dp"
+        android:layout_height="96dp"
+        android:text="@string/you_ve_won"
+        android:textColor="@color/white"
+        android:textSize="55sp"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="56dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

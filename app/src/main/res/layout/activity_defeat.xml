@@ -8,12 +8,28 @@
     tools:context=".DefeatActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="340dp"
-        android:layout_height="76dp"
+        android:id="@+id/txvYouveLost"
+        android:layout_width="386dp"
+        android:layout_height="90dp"
         android:text="@string/you_lost"
         android:textColor="@color/white"
-        android:textSize="60sp"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="55dp" />
+        android:textSize="55sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="87dp" />
+
+    <Button
+        android:id="@+id/btnBackToMenuFromDefeat"
+        android:layout_width="218dp"
+        android:layout_height="57dp"
+        android:text="@string/back_to_menu"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="399dp" />
+
+    <Button
+        android:id="@+id/btnRetry"
+        android:layout_width="218dp"
+        android:layout_height="57dp"
+        android:text="@string/retry"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="323dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
