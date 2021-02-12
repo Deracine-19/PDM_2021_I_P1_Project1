@@ -8,17 +8,6 @@
     tools:context=".VictoryActivity">
 
     <Button
-        android:id="@+id/btnBackToMenuFromVictory"
-        android:layout_width="218dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="275dp"
-        android:text="@string/back_to_menu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPlayAgain" />
-
-    <Button
         android:id="@+id/btnPlayAgain"
         android:layout_width="218dp"
         android:layout_height="0dp"
@@ -26,20 +15,35 @@
         android:text="@string/play_again"
         app:layout_constraintBottom_toTopOf="@+id/btnBackToMenuFromVictory"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txvYouveWon" />
+
+    <Button
+        android:id="@+id/btnBackToMenuFromVictory"
+        android:layout_width="218dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="242dp"
+        android:text="@string/back_to_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlayAgain" />
 
     <TextView
         android:id="@+id/txvYouveWon"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="171dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="80dp"
+        android:fontFamily="@font/codeprobold"
         android:text="@string/you_ve_won"
+        android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="55sp"
+        android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/btnPlayAgain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

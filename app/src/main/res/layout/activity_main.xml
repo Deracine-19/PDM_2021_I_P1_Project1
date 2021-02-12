@@ -30,7 +30,7 @@
         android:id="@+id/btnPlay"
         android:layout_width="253dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/play"
         app:layout_constraintBottom_toTopOf="@+id/btnCreateWord"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,22 +38,12 @@
 
     <Button
         android:id="@+id/btnCreateWord"
-        android:layout_width="253dp"
+        android:layout_width="190dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="24dp"
         android:text="@string/create_word"
-        app:layout_constraintBottom_toTopOf="@+id/btnExit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnExit"
-        android:layout_width="253dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="204dp"
-        android:text="@string/exit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="512dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
