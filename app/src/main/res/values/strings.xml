@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">PDM_2021_I_P1_Project1</string>
-    <string name="you_lost">You´ve lost</string>
+    <string name="you_lost">YOU´VE LOST :/</string>
     <string name="hangman">HANGMAN</string>
     <string name="play">PLAY</string>
     <string name="create_word">CREATE WORD</string>
     <string name="exit">Exit</string>
+    <string name="retry">RETRY</string>
+    <string name="back_to_menu">BACK TO MENU</string>
+    <string name="you_ve_won">YOU´VE WON :)</string>
+    <string name="play_again">PLAY AGAIN</string>
 </resources>

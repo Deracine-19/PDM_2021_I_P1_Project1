@@ -4,6 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".VictoryActivity">
+
+    <Button
+        android:id="@+id/btnBackToMenuFromVictory"
+        android:layout_width="218dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="275dp"
+        android:text="@string/back_to_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlayAgain" />
+
+    <Button
+        android:id="@+id/btnPlayAgain"
+        android:layout_width="218dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="19dp"
+        android:text="@string/play_again"
+        app:layout_constraintBottom_toTopOf="@+id/btnBackToMenuFromVictory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txvYouveWon" />
+
+    <TextView
+        android:id="@+id/txvYouveWon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="171dp"
+        android:text="@string/you_ve_won"
+        android:textColor="@color/white"
+        android:textSize="55sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnPlayAgain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
