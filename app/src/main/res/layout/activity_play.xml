@@ -4,6 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".PlayActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="310dp"
+        android:layout_height="76dp"
+        android:fontFamily="@font/codeprobold"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="74dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Button"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="527dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="279dp"
+        android:layout_height="198dp"
+        app:srcCompat="@drawable/fondo"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="192dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="124dp"
+        android:layout_height="45dp"
+        app:srcCompat="@drawable/fondo"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="596dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
