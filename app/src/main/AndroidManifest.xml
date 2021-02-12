@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PDM_2021_I_P1_Project1">
+        <activity android:name=".DefeatActivity"></activity>
+        <activity android:name=".VictoryActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
