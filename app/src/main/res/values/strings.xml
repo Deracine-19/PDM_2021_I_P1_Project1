@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">PDM_2021_I_P1_Project1</string>
     <string name="you_lost">You´ve lost</string>
+    <string name="hangman">HANGMAN</string>
+    <string name="play">PLAY</string>
+    <string name="create_word">CREATE WORD</string>
+    <string name="exit">Exit</string>
 </resources>
