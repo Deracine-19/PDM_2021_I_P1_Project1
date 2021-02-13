@@ -4,6 +4,159 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
+
     tools:context=".CreateWordActivity">
+
+    <TextView
+        android:id="@+id/txvWriteAWord"
+        android:layout_width="312dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="80dp"
+        android:fontFamily="@font/codeprobold"
+        android:text="WRITE A WORD"
+
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnPlayAgain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="285dp"
+        android:layout_height="156dp"
+        android:src="@drawable/hangman"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
+        android:id="@+id/editTextWrite4"
+        android:layout_width="55dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="T"
+        android:textAlignment="center"
+        android:maxLength="1"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="343dp" />
+
+    <EditText
+        android:id="@+id/editTextWrite3"
+        android:layout_width="55dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="I"
+        android:textAlignment="center"
+        android:maxLength="1"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="343dp" />
+
+    <EditText
+        android:id="@+id/editTextWrite2"
+        android:layout_width="55dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="R"
+        android:textAlignment="center"
+        android:maxLength="1"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="343dp" />
+
+    <EditText
+        android:id="@+id/editTextWrite6"
+        android:layout_width="55dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="."
+        android:textAlignment="center"
+        android:maxLength="1"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="318dp"
+        tools:layout_editor_absoluteY="343dp" />
+
+    <EditText
+        android:id="@+id/editTextWrite"
+        android:layout_width="55dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+
+        android:text="W"
+        android:textAlignment="center"
+        android:maxLength="1"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="343dp" />
+
+    <EditText
+        android:id="@+id/editTextWrite5"
+        android:layout_width="55dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="E"
+        android:textAlignment="center"
+        android:maxLength="1"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="263dp"
+        tools:layout_editor_absoluteY="343dp" />
+
+    <ImageButton
+        android:id="@+id/btnSave"
+        android:layout_width="74dp"
+        android:layout_height="58dp"
+        android:backgroundTint="@color/black"
+        app:srcCompat="@drawable/ic_save"
+        tools:layout_editor_absoluteX="178dp"
+        tools:layout_editor_absoluteY="544dp" />
+
+    <EditText
+        android:id="@+id/editTextHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:fontFamily="@font/codeprobold"
+        android:hint="Food"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="#595757"
+        android:textColorHint="@color/gray"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="470dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="84dp"
+        android:layout_height="21dp"
+        android:fontFamily="@font/codeprobold"
+        android:text="ADD A HINT"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="442dp" />
+
+    <EditText
+        android:id="@+id/editTextTypeAWord"
+        android:layout_width="326dp"
+        android:layout_height="51dp"
+        android:ems="10"
+        android:fontFamily="@font/codeprobold"
+        android:hint="TYPE A WORD"
+        android:textAlignment="center"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/white"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="282dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

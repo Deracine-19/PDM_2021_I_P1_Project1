@@ -9,15 +9,17 @@
 
     <TextView
         android:id="@+id/txvYouveLost"
-        android:layout_width="393dp"
-        android:layout_height="97dp"
+        android:layout_width="407dp"
+        android:layout_height="95dp"
+        android:fontFamily="@font/codeprobold"
         android:text="@string/you_lost"
         android:textColor="@color/white"
         android:textSize="55sp"
         app:layout_constraintBottom_toTopOf="@+id/btnRetry"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.74" />
 
     <Button
         android:id="@+id/btnBackToMenuFromDefeat"
