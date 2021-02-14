@@ -9,38 +9,82 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="310dp"
-        android:layout_height="76dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="42dp"
         android:fontFamily="@font/codeprobold"
-        android:text="TextView"
+        android:text="LET´S PLAY"
+        android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="60sp"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="74dp" />
+        android:textSize="55sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="Button"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="527dp" />
+        android:layout_marginBottom="96dp"
+        android:text="Validate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEnterLetter" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="279dp"
-        android:layout_height="198dp"
-        app:srcCompat="@drawable/fondo"
-        android:visibility="invisible"
-        tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="192dp" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="42dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/LinearLayoutContainerofTxv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/fondo" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="124dp"
-        android:layout_height="45dp"
-        app:srcCompat="@drawable/fondo"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="596dp" />
+    <EditText
+        android:id="@+id/editTextEnterLetter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:fontFamily="@font/codeprobold"
+        android:hint="Add a letter"
+        android:maxLength="1"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayoutContainerofTxv" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutContainerofTxv"
+        android:layout_width="391dp"
+        android:layout_height="62dp"
+        android:layout_marginBottom="51dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/editTextEnterLetter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+</LinearLayout>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

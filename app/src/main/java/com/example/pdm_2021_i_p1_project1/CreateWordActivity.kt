@@ -10,12 +10,7 @@ class CreateWordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_word)
 
-        var word = ArrayList<String>()
-        for (elements in editTextTypeAWord.text) {
-            word.add(elements.toString())
-            var counter=0
-            counter+1
-        }
+
 
         var matrizcreada=Array(5){Array<String?>(2){null} }
         for (i in (0 until 5)){
@@ -30,7 +25,11 @@ class CreateWordActivity : AppCompatActivity() {
             }
         }
 
+        val str=editTextTypeAWord.text.toString()
+        val chars:CharArray=toCharacterArray(str)
+
         btnSave.setOnClickListener{(save())}
+        btnSave.setOnClickListener{(onBackPressed())}
     }
 
 
@@ -41,6 +40,12 @@ class CreateWordActivity : AppCompatActivity() {
             matrizcreada[i][1] = editTextHint.text.toString()
         }
     }
+
+
+    fun toCharacterArray(str:String): CharArray{
+        return str.toCharArray()
+    }
+
 
 }
 

@@ -34,85 +34,6 @@
         tools:layout_editor_absoluteX="72dp"
         tools:layout_editor_absoluteY="16dp" />
 
-    <EditText
-        android:id="@+id/editTextWrite4"
-        android:layout_width="55dp"
-        android:layout_height="44dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="T"
-        android:textAlignment="center"
-        android:maxLength="1"
-        android:textColor="@color/white"
-        tools:layout_editor_absoluteX="208dp"
-        tools:layout_editor_absoluteY="343dp" />
-
-    <EditText
-        android:id="@+id/editTextWrite3"
-        android:layout_width="55dp"
-        android:layout_height="44dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="I"
-        android:textAlignment="center"
-        android:maxLength="1"
-        android:textColor="@color/white"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="343dp" />
-
-    <EditText
-        android:id="@+id/editTextWrite2"
-        android:layout_width="55dp"
-        android:layout_height="44dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="R"
-        android:textAlignment="center"
-        android:maxLength="1"
-        android:textColor="@color/white"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="343dp" />
-
-    <EditText
-        android:id="@+id/editTextWrite6"
-        android:layout_width="55dp"
-        android:layout_height="44dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="."
-        android:textAlignment="center"
-        android:maxLength="1"
-        android:textColor="@color/white"
-        tools:layout_editor_absoluteX="318dp"
-        tools:layout_editor_absoluteY="343dp" />
-
-    <EditText
-        android:id="@+id/editTextWrite"
-        android:layout_width="55dp"
-        android:layout_height="44dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-
-        android:text="W"
-        android:textAlignment="center"
-        android:maxLength="1"
-        android:textColor="@color/white"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="343dp" />
-
-    <EditText
-        android:id="@+id/editTextWrite5"
-        android:layout_width="55dp"
-        android:layout_height="44dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="E"
-        android:textAlignment="center"
-        android:maxLength="1"
-        android:textColor="@color/white"
-        tools:layout_editor_absoluteX="263dp"
-        tools:layout_editor_absoluteY="343dp" />
-
     <ImageButton
         android:id="@+id/btnSave"
         android:layout_width="74dp"
@@ -153,10 +74,10 @@
         android:ems="10"
         android:fontFamily="@font/codeprobold"
         android:hint="TYPE A WORD"
-        android:textAlignment="center"
         android:inputType="textPersonName"
+        android:textAlignment="center"
         android:textColorHint="@color/white"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="282dp" />
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="329dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
