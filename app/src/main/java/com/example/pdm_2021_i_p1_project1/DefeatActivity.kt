@@ -17,6 +17,7 @@ class DefeatActivity : AppCompatActivity() {
 
     private fun backToMainMenu(){
         val intent = Intent(this, MainActivity::class.java)
+        finish()
         startActivity(intent)
     }
 

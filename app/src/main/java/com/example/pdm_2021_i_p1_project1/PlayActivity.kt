@@ -10,9 +10,8 @@ import java.util.*
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.isVisible
-import kotlinx.android.synthetic.main.activity_create_word.*
-import java.io.InputStream
 import java.io.File
+import java.io.InputStream
 
 
 class PlayActivity : AppCompatActivity() {
@@ -35,36 +34,43 @@ class PlayActivity : AppCompatActivity() {
             "Junio",
             "Julio")
 
-    private val matrizCreada = Array(words.size){Array<String?>(2){null} }
+    private val createMatrix = Array(words.size){Array<String?>(2){null} }
 
- /**   fun readFile(): MutableList<String> {
+    fun readFile(): MutableList<String> {
         val inputStream: InputStream = File("main\\assets\\words.txt").inputStream()
         val words = mutableListOf<String>()
         inputStream.bufferedReader().useLines { lines -> lines.forEach { words.add(it) } }
         return words
-    }*/
+    }
 
-    private val lives = 3
+    private val lives = 6
     private var correctGuesses = mutableSetOf<Char>()
+    private var guesses = mutableSetOf<Char>()
     private var fails = 0
-    private val word = pickWord().toLowerCase(Locale.ROOT)
+    var pickedWord = pickWord()
+    private val word = words[pickedWord].toLowerCase(Locale.ROOT)
+    private val clue = clues[pickedWord]
     private val letters = word.toLowerCase(Locale.ROOT).toCharArray().toHashSet()
     private val txtArray = arrayOfNulls<TextView>(word.length)
-    private val list = word.toCharArray().toList()
+    //private val list = word.toCharArray().toList()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
         btnCheck.setOnClickListener{(checkWord())}
         createTxtViews()
+        txvClue.text = clue.toUpperCase()
+        txvLives.text = "❤❤❤❤❤❤"
     }
 
     private fun checkWord(){
+        val character = txtPlayAddLetter.text.toString().toLowerCase(Locale.ROOT)
         if (txtPlayAddLetter.text.isNotEmpty()){
             if (word.contains(txtPlayAddLetter.text.toString().toLowerCase(Locale.ROOT))) {
-                val character = txtPlayAddLetter.text.toString().toLowerCase(Locale.ROOT)
                 correctGuesses.add(character[0])
-                txvTest.text = correctGuesses.toString()
+                guesses.add(character[0])
+                txvGuessed.text = guesses.toString()
                 txvTest4.text = letters.toString()
                 fuck()
                 txtPlayAddLetter.text.clear()
@@ -73,7 +79,11 @@ class PlayActivity : AppCompatActivity() {
             else
             {
                 fails++
-                txvTest2.text = fails.toString()
+                guesses.add(character[0])
+                txvGuessed.text = guesses.toString()
+                txtPlayAddLetter.text.clear()
+                val hearts = txvLives.text.dropLast(1)
+                txvLives.text = hearts
                 if (fails == lives){
                     showDefeat()
                 }
@@ -85,17 +95,20 @@ class PlayActivity : AppCompatActivity() {
         }
     }
 
-    private fun pickWord(): String {
-        return words.random()
+    private fun pickWord(): Int {
+        //matrix()
+        return (0..words.size).random()
     }
 
     private fun showDefeat(){
         val intent = Intent(this, DefeatActivity::class.java)
+        finish()
         startActivity(intent)
     }
 
     private fun showVictory(){
         val intent = Intent(this, VictoryActivity::class.java)
+        finish()
         startActivity(intent)
     }
 
@@ -105,19 +118,19 @@ class PlayActivity : AppCompatActivity() {
             txtArray[i] = TextView(this)
             txtArray[i]?.id = i
             txtArray[i]?.setTextColor(resources.getColor(R.color.white))
-            txtArray[i]?.setHint(" _ ")
+            txtArray[i]?.setHint("  _  ")
             txtArray[i]?.setHintTextColor(resources.getColor(R.color.white))
+            txtArray[i]?.setTextSize(25F)
             lLayout.addView(txtArray[i])
             txtArray[i]?.isVisible = true
-            txvTest5.text = lLayout.childCount.toString()
         }
     }
 
     private fun fuck(){
-        var strrring = txtPlayAddLetter.text
+        var strrring = txtPlayAddLetter.text.toString().toLowerCase()
         for (i in word.indices){
-            if (txtPlayAddLetter.text.single() == list[i]){
-                txtArray[i]?.text = strrring.toString().toUpperCase(Locale.ROOT)
+            if (txtPlayAddLetter.text.single().toLowerCase() == word[i]){
+                txtArray[i]?.text = "  ".plus(strrring.toString().toUpperCase(Locale.ROOT)).plus("  ")
             }
         }
     }
@@ -125,13 +138,14 @@ class PlayActivity : AppCompatActivity() {
     private fun checkGameState(){
         if (correctGuesses == letters){
             showVictory()
+            finish()
         }
     }
 
     private fun matrix(){
         for (i in words.indices){
-            matrizCreada[i][0] = words[i]
-            matrizCreada[i][1] = clues[i]
+            createMatrix[i][0] = words[i]
+            createMatrix[i][1] = clues[i]
         }
     }
 }
