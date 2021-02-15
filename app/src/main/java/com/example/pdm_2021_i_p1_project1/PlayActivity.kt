@@ -7,16 +7,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_play.*
 import java.util.*
-import java.io.File
-
-
 import android.widget.LinearLayout
-import android.widget.Space
 import android.widget.TextView
 import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_create_word.*
-import org.w3c.dom.Text
 import java.io.InputStream
+import java.io.File
 
 
 class PlayActivity : AppCompatActivity() {
@@ -29,6 +25,17 @@ class PlayActivity : AppCompatActivity() {
             "May",
             "June",
             "July")
+
+    private val clues = arrayOf(
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio")
+
+    private val matrizCreada = Array(words.size){Array<String?>(2){null} }
 
  /**   fun readFile(): MutableList<String> {
         val inputStream: InputStream = File("main\\assets\\words.txt").inputStream()
@@ -43,6 +50,7 @@ class PlayActivity : AppCompatActivity() {
     private val word = pickWord().toLowerCase(Locale.ROOT)
     private val letters = word.toLowerCase(Locale.ROOT).toCharArray().toHashSet()
     private val txtArray = arrayOfNulls<TextView>(word.length)
+    private val list = word.toCharArray().toList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +58,6 @@ class PlayActivity : AppCompatActivity() {
         btnCheck.setOnClickListener{(checkWord())}
         createTxtViews()
     }
-
 
     private fun checkWord(){
         if (txtPlayAddLetter.text.isNotEmpty()){
@@ -62,7 +69,6 @@ class PlayActivity : AppCompatActivity() {
                 fuck()
                 txtPlayAddLetter.text.clear()
                 checkGameState()
-
             }
             else
             {
@@ -96,22 +102,22 @@ class PlayActivity : AppCompatActivity() {
     private fun createTxtViews(){
         val lLayout = findViewById<View>(R.id.txtPlayGuessed) as LinearLayout
         for (i in word.indices) {
-            //val tv = TextView(this)
             txtArray[i] = TextView(this)
-            //tv.id = R.id.word1
             txtArray[i]?.id = i
-            txtArray[i]?.text = word[i].toString()
             txtArray[i]?.setTextColor(resources.getColor(R.color.white))
+            txtArray[i]?.setHint(" _ ")
+            txtArray[i]?.setHintTextColor(resources.getColor(R.color.white))
             lLayout.addView(txtArray[i])
-            txtArray[i]?.isVisible = false
+            txtArray[i]?.isVisible = true
             txvTest5.text = lLayout.childCount.toString()
         }
     }
 
     private fun fuck(){
+        var strrring = txtPlayAddLetter.text
         for (i in word.indices){
-            if (txtArray[i]?.text.toString() == txtPlayAddLetter.text.toString()){
-                txtArray[i]?.isVisible = true
+            if (txtPlayAddLetter.text.single() == list[i]){
+                txtArray[i]?.text = strrring.toString().toUpperCase(Locale.ROOT)
             }
         }
     }
@@ -120,6 +126,12 @@ class PlayActivity : AppCompatActivity() {
         if (correctGuesses == letters){
             showVictory()
         }
+    }
 
+    private fun matrix(){
+        for (i in words.indices){
+            matrizCreada[i][0] = words[i]
+            matrizCreada[i][1] = clues[i]
+        }
     }
 }
