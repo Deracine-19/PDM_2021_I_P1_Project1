@@ -15,8 +15,8 @@ import java.io.InputStream
 
 
 class PlayActivity : AppCompatActivity() {
-
     //Variable Declarations
+
     private val words = arrayOf(
             "January",
             "February",
@@ -35,15 +35,13 @@ class PlayActivity : AppCompatActivity() {
             "Junio",
             "Julio")
 
-    //private val createMatrix = Array(words.size){Array<String?>(2){null} }
+    //private val createMatrix = Array(words.size){Array<String?>(2){null}}
 
     /**private fun readFile(): MutableList<String> {
         val inputStream: InputStream = File("assets.txt").inputStream()
         val wordsF = mutableListOf<String>()
         inputStream.bufferedReader().useLines { lines -> lines.forEach { wordsF.add(it) } }
-        return wordsF
-    }*/
-
+        return wordsF}*/
 
     private val lives : Int = 6
     private var fails : Int = 0
@@ -70,7 +68,7 @@ class PlayActivity : AppCompatActivity() {
             if (word.contains(txtPlayAddLetter.text.toString().toLowerCase(Locale.ROOT))) {
                 correctGuesses.add(character[0])
                 guesses.add(character[0])
-                txvGuessed.text = guesses.toString()
+                txvGuessed.text = guesses.toString().toUpperCase(Locale.ROOT)
                 txvTest4.text = letters.toString()
                 fuck()
                 txtPlayAddLetter.text.clear()
@@ -80,7 +78,7 @@ class PlayActivity : AppCompatActivity() {
             {
                 fails++
                 guesses.add(character[0])
-                txvGuessed.text = guesses.toString()
+                txvGuessed.text = guesses.toString().toUpperCase(Locale.ROOT)
                 txtPlayAddLetter.text.clear()
                 val hearts = txvLives.text.dropLast(1)
                 txvLives.text = hearts
