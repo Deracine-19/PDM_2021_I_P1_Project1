@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_play.*
 import java.util.*
+import java.io.File
 
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -15,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_create_word.*
 
 class PlayActivity : AppCompatActivity() {
     //Variable Declarations
-    val words = arrayOf(
+    private val words = arrayOf(
             "January",
             "February",
             "March",
@@ -23,11 +24,12 @@ class PlayActivity : AppCompatActivity() {
             "May",
             "June",
             "July")
+
     private val lives = 4
-    var correctGuesses = mutableSetOf<Char>()
-    var fails = 0
-    val word = pickWord().toLowerCase()
-    val letters = word.toLowerCase(Locale.ROOT).toCharArray().toHashSet()
+    private var correctGuesses = mutableSetOf<Char>()
+    private var fails = 0
+    private val word = pickWord().toLowerCase(Locale.ROOT)
+    private val letters = word.toLowerCase(Locale.ROOT).toCharArray().toHashSet()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,7 +77,8 @@ class PlayActivity : AppCompatActivity() {
                     showDefeat()
                 }
             }
-        }else
+        }
+        else
         {
             Toast.makeText(this@PlayActivity, "Please enter a letter :)", Toast.LENGTH_LONG).show()
         }
