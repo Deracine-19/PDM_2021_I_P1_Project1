@@ -43,7 +43,7 @@ class PlayActivity : AppCompatActivity() {
         inputStream.bufferedReader().useLines { lines -> lines.forEach { wordsF.add(it) } }
         return wordsF}*/
 
-    private val lives : Int = 6
+    private val lives : Int = 4
     private var fails : Int = 0
     private var correctGuesses = mutableSetOf<Char>()
     private var guesses = mutableSetOf<Char>()
@@ -59,7 +59,7 @@ class PlayActivity : AppCompatActivity() {
         btnCheck.setOnClickListener{(checkWord())}
         createTxtViews()
         txvClue.text = clue.toUpperCase(Locale.ROOT)
-        txvLives.text = "❤❤❤❤❤❤"
+        txvLives.text = "❤❤❤❤"
     }
 
     private fun checkWord(){
@@ -82,6 +82,16 @@ class PlayActivity : AppCompatActivity() {
                 txtPlayAddLetter.text.clear()
                 val hearts = txvLives.text.dropLast(1)
                 txvLives.text = hearts
+                when (fails) {
+                    1 -> {frame1.isVisible = false
+                          frame2.isVisible = true}
+                    2 -> {frame2.isVisible = false
+                          frame3.isVisible = true}
+                    3 -> {frame3.isVisible = false
+                          frame4.isVisible = true}
+                    4 -> {frame4.isVisible = false
+                          frame5.isVisible = true}
+                }
                 if (fails == lives)
                 {
                     showDefeat()

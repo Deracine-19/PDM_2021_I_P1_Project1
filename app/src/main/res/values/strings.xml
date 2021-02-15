@@ -7,6 +7,6 @@
     <string name="exit">Exit</string>
     <string name="retry">RETRY</string>
     <string name="back_to_menu">BACK TO MENU</string>
-    <string name="you_ve_won">YOU´VE WON :)</string>
+    <string name="you_ve_won">YOU WON  :)</string>
     <string name="play_again">PLAY AGAIN ?</string>
 </resources>
