@@ -23,6 +23,7 @@ class DefeatActivity : AppCompatActivity() {
 
     private fun retry(){
         val intent = Intent(this, PlayActivity::class.java)
+        finish()
         startActivity(intent)
     }
 }

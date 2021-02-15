@@ -10,8 +10,6 @@ import java.util.*
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.isVisible
-import java.io.File
-import java.io.InputStream
 
 
 class PlayActivity : AppCompatActivity() {
@@ -69,8 +67,8 @@ class PlayActivity : AppCompatActivity() {
                 correctGuesses.add(character[0])
                 guesses.add(character[0])
                 txvGuessed.text = guesses.toString().toUpperCase(Locale.ROOT)
-                txvTest4.text = letters.toString()
-                fuck()
+                txvTest.text = letters.toString()
+                showLetters()
                 txtPlayAddLetter.text.clear()
                 checkGameState()
             }
@@ -90,8 +88,7 @@ class PlayActivity : AppCompatActivity() {
                     3 -> {frame3.isVisible = false
                           frame4.isVisible = true}
                     4 -> {frame4.isVisible = false
-                          frame5.isVisible = true}
-                }
+                          frame5.isVisible = true}}
                 if (fails == lives)
                 {
                     showDefeat()
@@ -106,7 +103,7 @@ class PlayActivity : AppCompatActivity() {
 
     private fun pickWord(): Int {
         //matrix()
-        return (0..words.size).random()
+        return (words.indices).random()
     }
 
     private fun showDefeat(){
@@ -135,7 +132,7 @@ class PlayActivity : AppCompatActivity() {
         }
     }
 
-    private fun fuck(){
+    private fun showLetters(){
         val strrring = txtPlayAddLetter.text.toString().toLowerCase(Locale.ROOT)
         for (i in word.indices){
             if (txtPlayAddLetter.text.single().toLowerCase() == word[i]){
@@ -149,6 +146,7 @@ class PlayActivity : AppCompatActivity() {
             showVictory()
             finish()
         }
+
     }
 
     /**private fun matrix(){

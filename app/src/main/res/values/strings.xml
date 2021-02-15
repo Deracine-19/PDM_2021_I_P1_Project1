@@ -9,4 +9,10 @@
     <string name="back_to_menu">BACK TO MENU 🚪</string>
     <string name="you_ve_won">🎉 YOU WON  🎉</string>
     <string name="play_again">PLAY AGAIN ?</string>
+    <string name="todo">TODO</string>
+    <string name="write_a_word">WRITE A WORD</string>
+    <string name="add_a_hint">ADD A HINT</string>
+    <string name="type_a_word">TYPE A WORD</string>
+    <string name="let_s_play">LET´S PLAY</string>
+    <string name="type_in_a_letter">TYPE IN A LETTER</string>
 </resources>
