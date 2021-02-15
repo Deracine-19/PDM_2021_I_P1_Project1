@@ -2,16 +2,21 @@ package com.example.pdm_2021_i_p1_project1
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_play.*
 import java.util.*
 import java.io.File
 
+
 import android.widget.LinearLayout
+import android.widget.Space
 import android.widget.TextView
 import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_create_word.*
+import org.w3c.dom.Text
+import java.io.InputStream
 
 
 class PlayActivity : AppCompatActivity() {
@@ -25,39 +30,27 @@ class PlayActivity : AppCompatActivity() {
             "June",
             "July")
 
-    private val lives = 4
+ /**   fun readFile(): MutableList<String> {
+        val inputStream: InputStream = File("main\\assets\\words.txt").inputStream()
+        val words = mutableListOf<String>()
+        inputStream.bufferedReader().useLines { lines -> lines.forEach { words.add(it) } }
+        return words
+    }*/
+
+    private val lives = 3
     private var correctGuesses = mutableSetOf<Char>()
     private var fails = 0
     private val word = pickWord().toLowerCase(Locale.ROOT)
     private val letters = word.toLowerCase(Locale.ROOT).toCharArray().toHashSet()
+    private val txtArray = arrayOfNulls<TextView>(word.length)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
         btnCheck.setOnClickListener{(checkWord())}
-
-
-        /**
-        // val str=editTextTypeAWord.text.toString()
-        // val chars:CharArray=toCharacterArray(str)*
-
-
-        val lLayout = findViewById<View>(R.id.LinearLayoutContainerofTxv) as LinearLayout
-
-        for (i in 0..4) {
-            val tv = TextView(this)
-            tv.text = "A $i"
-            tv.id = i + 5
-            // tv.isVisible=false
-            tv.setTextColor(getResources().getColor(R.color.white))
-
-            lLayout.addView(tv) */
+        createTxtViews()
     }
 
-    /**
-    fun toCharacterArray(str:String): CharArray{
-        return str.toCharArray()
-    } */
 
     private fun checkWord(){
         if (txtPlayAddLetter.text.isNotEmpty()){
@@ -66,8 +59,10 @@ class PlayActivity : AppCompatActivity() {
                 correctGuesses.add(character[0])
                 txvTest.text = correctGuesses.toString()
                 txvTest4.text = letters.toString()
+                fuck()
                 txtPlayAddLetter.text.clear()
                 checkGameState()
+
             }
             else
             {
@@ -98,9 +93,33 @@ class PlayActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    private fun createTxtViews(){
+        val lLayout = findViewById<View>(R.id.txtPlayGuessed) as LinearLayout
+        for (i in word.indices) {
+            //val tv = TextView(this)
+            txtArray[i] = TextView(this)
+            //tv.id = R.id.word1
+            txtArray[i]?.id = i
+            txtArray[i]?.text = word[i].toString()
+            txtArray[i]?.setTextColor(resources.getColor(R.color.white))
+            lLayout.addView(txtArray[i])
+            txtArray[i]?.isVisible = false
+            txvTest5.text = lLayout.childCount.toString()
+        }
+    }
+
+    private fun fuck(){
+        for (i in word.indices){
+            if (txtArray[i]?.text.toString() == txtPlayAddLetter.text.toString()){
+                txtArray[i]?.isVisible = true
+            }
+        }
+    }
+
     private fun checkGameState(){
         if (correctGuesses == letters){
             showVictory()
         }
+
     }
 }

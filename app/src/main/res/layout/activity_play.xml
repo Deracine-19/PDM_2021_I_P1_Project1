@@ -78,7 +78,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:gravity="center"
-
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
 </LinearLayout>
@@ -116,7 +115,7 @@
         android:layout_width="138dp"
         android:layout_height="35dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginEnd="16dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -125,6 +124,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCheck"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txvTest5"
+        android:layout_width="188dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="48dp"
+        android:text="TextView"
+        android:textAlignment="viewStart"
+        android:textColor="#FFFFFF"
+        android:textSize="8sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/txvTest4"
+        app:layout_constraintTop_toBottomOf="@+id/txvTest2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
