@@ -15,6 +15,7 @@ import java.io.InputStream
 
 
 class PlayActivity : AppCompatActivity() {
+
     //Variable Declarations
     private val words = arrayOf(
             "January",
@@ -34,33 +35,32 @@ class PlayActivity : AppCompatActivity() {
             "Junio",
             "Julio")
 
-    private val createMatrix = Array(words.size){Array<String?>(2){null} }
+    //private val createMatrix = Array(words.size){Array<String?>(2){null} }
 
-    fun readFile(): MutableList<String> {
-        val inputStream: InputStream = File("main\\assets\\words.txt").inputStream()
-        val words = mutableListOf<String>()
-        inputStream.bufferedReader().useLines { lines -> lines.forEach { words.add(it) } }
-        return words
-    }
+    /**private fun readFile(): MutableList<String> {
+        val inputStream: InputStream = File("assets.txt").inputStream()
+        val wordsF = mutableListOf<String>()
+        inputStream.bufferedReader().useLines { lines -> lines.forEach { wordsF.add(it) } }
+        return wordsF
+    }*/
 
-    private val lives = 6
+
+    private val lives : Int = 6
+    private var fails : Int = 0
     private var correctGuesses = mutableSetOf<Char>()
     private var guesses = mutableSetOf<Char>()
-    private var fails = 0
     var pickedWord = pickWord()
     private val word = words[pickedWord].toLowerCase(Locale.ROOT)
     private val clue = clues[pickedWord]
     private val letters = word.toLowerCase(Locale.ROOT).toCharArray().toHashSet()
     private val txtArray = arrayOfNulls<TextView>(word.length)
-    //private val list = word.toCharArray().toList()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
         btnCheck.setOnClickListener{(checkWord())}
         createTxtViews()
-        txvClue.text = clue.toUpperCase()
+        txvClue.text = clue.toUpperCase(Locale.ROOT)
         txvLives.text = "❤❤❤❤❤❤"
     }
 
@@ -84,7 +84,8 @@ class PlayActivity : AppCompatActivity() {
                 txtPlayAddLetter.text.clear()
                 val hearts = txvLives.text.dropLast(1)
                 txvLives.text = hearts
-                if (fails == lives){
+                if (fails == lives)
+                {
                     showDefeat()
                 }
             }
@@ -118,19 +119,19 @@ class PlayActivity : AppCompatActivity() {
             txtArray[i] = TextView(this)
             txtArray[i]?.id = i
             txtArray[i]?.setTextColor(resources.getColor(R.color.white))
-            txtArray[i]?.setHint("  _  ")
+            txtArray[i]?.hint = "  _  "
             txtArray[i]?.setHintTextColor(resources.getColor(R.color.white))
-            txtArray[i]?.setTextSize(25F)
+            txtArray[i]?.textSize = 25F
             lLayout.addView(txtArray[i])
             txtArray[i]?.isVisible = true
         }
     }
 
     private fun fuck(){
-        var strrring = txtPlayAddLetter.text.toString().toLowerCase()
+        val strrring = txtPlayAddLetter.text.toString().toLowerCase(Locale.ROOT)
         for (i in word.indices){
             if (txtPlayAddLetter.text.single().toLowerCase() == word[i]){
-                txtArray[i]?.text = "  ".plus(strrring.toString().toUpperCase(Locale.ROOT)).plus("  ")
+                txtArray[i]?.text = "  ".plus(strrring.toUpperCase(Locale.ROOT)).plus("  ")
             }
         }
     }
@@ -142,10 +143,9 @@ class PlayActivity : AppCompatActivity() {
         }
     }
 
-    private fun matrix(){
+    /**private fun matrix(){
         for (i in words.indices){
             createMatrix[i][0] = words[i]
             createMatrix[i][1] = clues[i]
-        }
-    }
+        }*/
 }

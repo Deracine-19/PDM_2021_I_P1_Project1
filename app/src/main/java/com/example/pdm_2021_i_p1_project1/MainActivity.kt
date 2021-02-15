@@ -17,12 +17,10 @@ class MainActivity : AppCompatActivity() {
     private fun showPlay() {
         val intent = Intent(this, PlayActivity::class.java)
         startActivity(intent)
-        finish()
     }
 
     private fun showCreateWord() {
         val intent = Intent(this, CreateWordActivity::class.java)
         startActivity(intent)
-        finish()
     }
 }
