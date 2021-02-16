@@ -64,6 +64,8 @@ class PlayActivity : AppCompatActivity() {
         createTxtViews()
         txvClue.text = clue.toUpperCase(Locale.ROOT)
         txvLives.text = "❤❤❤❤"
+        addClue()
+        addWord()
     }
 
     private fun checkWord(){
@@ -152,6 +154,25 @@ class PlayActivity : AppCompatActivity() {
             showVictory()
             finish()
         }
+    }
+
+    fun addWord(){
+        val bundle=intent.extras
+        val setword= bundle?.get("setword")
+        txvRecordedWord.text = getString(R.string.setwordplay,setword)
+        var x :String
+        x = getString(R.string.setwordplay,setword)
+        words.set(7,x)
+
+    }
+    fun addClue(){
+        val bundle=intent.extras
+        val setclue= bundle?.get("setclue")
+        textViewclueshow.text= getString(R.string.setwordplay,setclue)
+        var x:String
+        x = getString(R.string.setwordplay,setclue)
+        words.set(words.indices.random(),x)
+
     }
 
     /**private fun matrix(){

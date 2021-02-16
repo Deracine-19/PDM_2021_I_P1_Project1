@@ -5,49 +5,36 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_create_word.*
+import kotlinx.android.synthetic.main.activity_defeat.*
 
+class WORD{
+    var setword: String=""
+    var setclue: String=""
+}
 class CreateWordActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_word)
 
-        var matrizcreada=Array(5){Array<String?>(2){null} }
-        for (i in (0 until 5)){
-            matrizcreada[i][0]=editTextTypeAWord.text.toString()
-            matrizcreada[i][1]=editTextHint.text.toString()
-        }
+        btnSave.setOnClickListener{(load())}
 
-        var palabra=CharArray(editTextTypeAWord.length())
-        for (j in editTextTypeAWord.text){
-            for(i in editTextTypeAWord.text) {
-                palabra.set(0,i.toChar())
-            }
-        }
 
-        val str=editTextTypeAWord.text.toString()
-        val chars:CharArray=toCharacterArray(str)
-
-        btnSave.setOnClickListener{(showPlay())}
     }
+    fun load(){
 
-    private fun save() {
-        var matrizcreada = Array(5) { Array<String?>(2) { null } }
-        for (i in (0 until 5)) {
-            matrizcreada[i][0] = editTextTypeAWord.text.toString()
-            matrizcreada[i][1] = editTextHint.text.toString()
-        }
-    }
 
-    private fun showPlay() {
+        // Create the Intent object of this class Context() to Second_activity class
         val intent = Intent(this, PlayActivity::class.java)
-        finish()
+
+        // now by putExtra method put the value in key, value pair
+        // key is message_key by this key we will receive the value, and put the string
+        intent.putExtra("setword", editTextTypeAWord.text.toString())
+        intent.putExtra("setclue", editTextHint.text.toString())
+
+        // start the Intent
         startActivity(intent)
-    }
-    private fun toCharacterArray(str:String): CharArray{
-        return str.toCharArray()
-    }
 
-
+    }
 }
 
 
