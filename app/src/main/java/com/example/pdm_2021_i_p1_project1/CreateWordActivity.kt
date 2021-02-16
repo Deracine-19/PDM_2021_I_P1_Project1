@@ -1,5 +1,6 @@
 package com.example.pdm_2021_i_p1_project1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,8 +10,6 @@ class CreateWordActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_word)
-
-
 
         var matrizcreada=Array(5){Array<String?>(2){null} }
         for (i in (0 until 5)){
@@ -28,10 +27,8 @@ class CreateWordActivity : AppCompatActivity() {
         val str=editTextTypeAWord.text.toString()
         val chars:CharArray=toCharacterArray(str)
 
-        btnSave.setOnClickListener{(save())}
-        btnSave.setOnClickListener{(onBackPressed())}
+        btnSave.setOnClickListener{(showPlay())}
     }
-
 
     private fun save() {
         var matrizcreada = Array(5) { Array<String?>(2) { null } }
@@ -41,8 +38,12 @@ class CreateWordActivity : AppCompatActivity() {
         }
     }
 
-
-    fun toCharacterArray(str:String): CharArray{
+    private fun showPlay() {
+        val intent = Intent(this, PlayActivity::class.java)
+        finish()
+        startActivity(intent)
+    }
+    private fun toCharacterArray(str:String): CharArray{
         return str.toCharArray()
     }
 

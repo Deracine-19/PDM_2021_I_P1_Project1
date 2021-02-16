@@ -3,16 +3,18 @@ package com.example.pdm_2021_i_p1_project1
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_play.*
-import java.util.*
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-
+import kotlinx.android.synthetic.main.activity_play.*
+import java.io.File
+import java.io.InputStream
+import java.util.*
 
 class PlayActivity : AppCompatActivity() {
+
     //Variable Declarations
 
     private val words = arrayOf(
@@ -22,7 +24,8 @@ class PlayActivity : AppCompatActivity() {
             "April",
             "May",
             "June",
-            "July")
+            "July",
+            "RAM")
 
     private val clues = arrayOf(
             "Enero",
@@ -31,12 +34,15 @@ class PlayActivity : AppCompatActivity() {
             "Abril",
             "Mayo",
             "Junio",
-            "Julio")
+            "Julio",
+            "Almacena procesos")
+
+    //al filetext: List<String> = applicationContext.assets.open("words.txt").bufferedReader().use { it.readLines() }
 
     //private val createMatrix = Array(words.size){Array<String?>(2){null}}
 
-    /**private fun readFile(): MutableList<String> {
-        val inputStream: InputStream = File("assets.txt").inputStream()
+    /**fun readFile(): List<String> {
+        val inputStream: InputStream = File("words.txt").inputStream()
         val wordsF = mutableListOf<String>()
         inputStream.bufferedReader().useLines { lines -> lines.forEach { wordsF.add(it) } }
         return wordsF}*/
@@ -82,13 +88,13 @@ class PlayActivity : AppCompatActivity() {
                 txvLives.text = hearts
                 when (fails) {
                     1 -> {frame1.isVisible = false
-                          frame2.isVisible = true}
+                        frame2.isVisible = true}
                     2 -> {frame2.isVisible = false
-                          frame3.isVisible = true}
+                        frame3.isVisible = true}
                     3 -> {frame3.isVisible = false
-                          frame4.isVisible = true}
+                        frame4.isVisible = true}
                     4 -> {frame4.isVisible = false
-                          frame5.isVisible = true}}
+                        frame5.isVisible = true}}
                 if (fails == lives)
                 {
                     showDefeat()
@@ -133,10 +139,10 @@ class PlayActivity : AppCompatActivity() {
     }
 
     private fun showLetters(){
-        val strrring = txtPlayAddLetter.text.toString().toLowerCase(Locale.ROOT)
+        val str = txtPlayAddLetter.text.toString().toLowerCase(Locale.ROOT)
         for (i in word.indices){
             if (txtPlayAddLetter.text.single().toLowerCase() == word[i]){
-                txtArray[i]?.text = "  ".plus(strrring.toUpperCase(Locale.ROOT)).plus("  ")
+                txtArray[i]?.text = "  ".plus(str.toUpperCase(Locale.ROOT)).plus("  ")
             }
         }
     }
@@ -146,12 +152,11 @@ class PlayActivity : AppCompatActivity() {
             showVictory()
             finish()
         }
-
     }
 
     /**private fun matrix(){
-        for (i in words.indices){
-            createMatrix[i][0] = words[i]
-            createMatrix[i][1] = clues[i]
-        }*/
+    for (i in words.indices){
+    createMatrix[i][0] = words[i]
+    createMatrix[i][1] = clues[i]
+    }*/
 }

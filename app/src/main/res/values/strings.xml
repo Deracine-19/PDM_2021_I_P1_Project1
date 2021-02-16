@@ -15,4 +15,5 @@
     <string name="type_a_word">TYPE A WORD</string>
     <string name="let_s_play">LET´S PLAY</string>
     <string name="type_in_a_letter">TYPE IN A LETTER</string>
+    <string name="hint">Hint</string>
 </resources>
